@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:MarvelRockSample;assembly=MarvelRockSample"
+		xmlns:rock="clr-namespace:RockMvvmForms;assembly=RockMvvmForms"
+		x:Class="MarvelRockSample.FirstView">
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="44"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+			</Grid.RowDefinitions>
+			<Grid.Padding>
+				<OnPlatform x:TypeArguments="Thickness" 
+					iOS="0, 0, 0, 0">
+				</OnPlatform>
+			</Grid.Padding>
+
+			<SearchBar Grid.Row="0" 
+				Text="{Binding SearchText}" 
+				SearchCommand="{Binding SearchByName}"></SearchBar>
+
+			<rock:ListView Grid.Row="1" x:Name="listCharacters"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				ItemsSource="{Binding CharacterList}"
+				ItemSelectedCommand="{Binding CharacterSelection}"
+				CachingStrategy="RecycleElement" 
+				RowHeight="80" >
+			    <ListView.ItemTemplate>
+			    	<DataTemplate>
+			    		<ViewCell>
+							<local:CharacterTemplate />
+						</ViewCell>
+			    	</DataTemplate>
+			    </ListView.ItemTemplate>
+			</rock:ListView>
+
+			<ActivityIndicator Grid.RowSpan="2" IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"
+	                      VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" />
+		</Grid>
+
+
+	</ContentPage.Content>
+</ContentPage>

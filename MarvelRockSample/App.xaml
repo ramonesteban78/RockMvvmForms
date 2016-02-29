@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="MarvelRockSample.App">
+	<Application.Resources>
+		<ResourceDictionary>
+
+			<!---Glossy Styles-->
+			<Color x:Key="CardBackgroundColor">#FFFFFF</Color>
+			<Color x:Key="SearchBarBackgroundColor">#FFFFFF</Color>
+			<Color x:Key="NameColor">#D32F2F</Color>
+
+
+			<!-- Formal Style -->
+
+<!--			<Color x:Key="CardBackgroundColor">#eceff1</Color>
+			<Color x:Key="SearchBarBackgroundColor">#cfd8dc</Color>
+			<Color x:Key="NameColor">#546e7a</Color>-->
+
+			<Color x:Key="EntryBackgroundColor">#7778909c</Color>
+
+			<Style x:Key="CardStyle" TargetType="Grid">
+				<Setter Property="HeightRequest" Value="80"/>
+				<Setter Property="Padding" Value="5,10,0,10"/>
+				<Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}"/>
+			</Style>
+
+
+			<Style x:Key="NameStyle" TargetType="Label">
+				<Setter Property="FontSize" Value="16"/>
+				<Setter Property="TextColor" Value="{DynamicResource NameColor}"/>
+				<Setter Property="FontAttributes" Value="Bold"/>
+			</Style> 
+
+			<Style x:Key="SearchStyle" TargetType="SearchBar">
+				<Setter Property="BackgroundColor" Value="{DynamicResource SearchBarBackgroundColor}"/>
+			</Style> 
+
+			
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

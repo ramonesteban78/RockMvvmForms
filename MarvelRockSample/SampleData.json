@@ -1,0 +1,27 @@
+{
+	"FirstView.xaml":{ "SearchText": "Test", "CharacterList": [
+		{ 
+			"Id":1, 
+			"Name": "Thor", 
+			"Thumbnail":"http://i.annihil.us/u/prod/marvel/i/mg/d/d0/5269657a74350.jpg", 
+			"Description": "As the Norse God of thunder and lightning, Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir. While others have described Thor as an over-muscled, oafish imbecile, he's quite smart and compassionate.  He's self-assured, and he would never, ever stop fighting for a worthwhile cause." 
+		},
+		{ "Id":1, "Name": "Thor (Goddess of Thunder)", "Thumbnail":"http://i.annihil.us/u/prod/marvel/i/mg/4/10/545a857a38f92.jpg", 
+			"Description": "When the Odinson lost his ability to wield Mjolnir, the role of Thor, God of Thunder, was left unoccupied&hellip;albeit for a short time. A mysterious female figure picked up the hammer with ease, changing the inscription to fit her status as the Goddess of Thunder." },
+	], "IsBusy": "false"},
+	"CharacterTemplate.xaml": { 
+			"Id":1, 
+			"Name": "Thor", 
+			"Thumbnail":"http://i.annihil.us/u/prod/marvel/i/mg/d/d0/5269657a74350.jpg", 
+			"Description": "As the Norse God of thunder and lightning, Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir. While others have described Thor as an over-muscled, oafish imbecile, he's quite smart and compassionate.  He's self-assured, and he would never, ever stop fighting for a worthwhile cause." 
+		},
+
+	"DetailView.xaml": { 
+			"Character": {
+				"Id":1, 
+				"Name": "Thor", 
+				"Thumbnail":"http://i.annihil.us/u/prod/marvel/i/mg/d/d0/5269657a74350.jpg", 
+				"Description": "As the Norse God of thunder and lightning, Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir. While others have described Thor as an over-muscled, oafish imbecile, he's quite smart and compassionate.  He's self-assured, and he would never, ever stop fighting for a worthwhile cause." 
+			}
+		},
+}
