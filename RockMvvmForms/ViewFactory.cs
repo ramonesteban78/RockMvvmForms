@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace RockMvvmForms
 {
@@ -19,6 +20,8 @@ namespace RockMvvmForms
 			var view = Activator.CreateInstance(viewType) as Page;
 			view.BindingContext = viewModel;
 			viewModel.Navigation = new Navigator(view.Navigation);
+
+			Task.Run (async () => await viewModel.InitAsync ());
 
 			// Events Appearing and Disappering
 			view.Appearing += viewModel.View_Appearing;

@@ -16,6 +16,12 @@ namespace RockMvvmForms
 			var view = _viewFactory.Resolve<TViewModel> (vm as TViewModel);
 			return new NavigationPage (view);
 		}
+
+		public Page Create () {
+			var vm = Activator.CreateInstance<TViewModel> ();
+			var view = _viewFactory.Resolve<TViewModel> (vm);
+			return new NavigationPage (view);
+		}
 	}
 }
 

@@ -20,7 +20,7 @@ namespace MarvelRockSample
 			RegisterViews ();
 
 			// The root page of your application
-			MainPage = new RockNavigationService<FirstViewModel>().Create(new FirstViewModel());
+			MainPage = new RockNavigationPageService<FirstViewModel>().Create();
 		}
 
 		protected override void OnStart ()
