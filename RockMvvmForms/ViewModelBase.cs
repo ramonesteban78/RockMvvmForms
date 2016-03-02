@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace RockMvvmForms
 {
@@ -62,6 +63,11 @@ namespace RockMvvmForms
 		}
 
 		#endregion
+
+		public virtual Task InitAsync()
+		{
+			return null;
+		}
 
 		public virtual void View_Appearing (object sender, EventArgs e)
 		{

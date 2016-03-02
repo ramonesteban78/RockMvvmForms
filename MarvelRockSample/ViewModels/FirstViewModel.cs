@@ -96,17 +96,17 @@ namespace MarvelRockSample
 
 		#endregion
 
-		#region View_Appearing
-
-		public override async void View_Appearing (object sender, System.EventArgs e)
-		{
-			if (_IsFirstLoad) {
-				await LoadData ();
-				_IsFirstLoad = false;
-			}
-		}
-
-		#endregion
+//		#region View_Appearing
+//
+//		public override async void View_Appearing (object sender, System.EventArgs e)
+//		{
+//			if (_IsFirstLoad) {
+//				await LoadData ();
+//				_IsFirstLoad = false;
+//			}
+//		}
+//
+//		#endregion
 
 		#region LoadData
 
@@ -132,5 +132,12 @@ namespace MarvelRockSample
 		}
 
 		#endregion
+
+
+
+		public override async Task InitAsync ()
+		{
+			await LoadData ();
+		}
     }
 }
