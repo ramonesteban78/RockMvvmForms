@@ -7,7 +7,6 @@ using Xamarin.UITest.Queries;
 
 namespace MarvelRockSample.UITests
 {
-	[TestFixture (Platform.Android)]
 	[TestFixture (Platform.iOS)]
 	public class Tests
 	{
@@ -26,12 +25,27 @@ namespace MarvelRockSample.UITests
 		}
 
 		[Test]
-		public void WelcomeTextIsDisplayed ()
+		public void DotNetMalagaTest ()
 		{
-			AppResult[] results = app.WaitForElement (c => c.Marked ("Welcome to Xamarin Forms!"));
-			app.Screenshot ("Welcome screen.");
+			app.ScrollDownTo("Agent Brand");
+			app.Screenshot("Scrolled to Agent Brand");
+			app.Tap(x => x.Marked("Agent Brand"));
+			app.Screenshot("Tapped on view UILabel with Text: 'Agent Brand'");
+			app.Tap(x => x.Text("Marvel Rocks"));
+			app.Screenshot("Tapped on view UILabel with Text: 'Marvel Rocks'");
+			app.Tap(x => x.Class("UISearchBarTextField"));
+			app.Screenshot("Tapped on view UISearchBarTextField");
+			app.EnterText(x => x.Class("UISearchBarTextField"), "Thor");
+			app.Screenshot("Entered 'Thor' into view UISearchBarTextField");
 
-			Assert.IsTrue (results.Any ());
+			app.PressEnter ();
+
+			app.Tap(x => x.Class("Xamarin_Forms_Platform_iOS_Platform_DefaultRenderer").Index(22));
+			app.Screenshot("Tapped on view Xamarin_Forms_Platform_iOS_Platform_DefaultRenderer");
+			app.Tap(x => x.Text("Marvel Rocks"));
+			app.Screenshot("Tapped on view UILabel with Text: 'Marvel Rocks'");
+
+			Assert.IsTrue (true);
 		}
 	}
 }

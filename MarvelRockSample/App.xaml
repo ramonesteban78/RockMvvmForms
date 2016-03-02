@@ -6,7 +6,7 @@
 		<ResourceDictionary>
 
 			<!---Glossy Styles-->
-			<Color x:Key="CardBackgroundColor">#FFFFFF</Color>
+			<Color x:Key="CardBackgroundColor">#00FFFFFF</Color>
 			<Color x:Key="SearchBarBackgroundColor">#FFFFFF</Color>
 			<Color x:Key="NameColor">#D32F2F</Color>
 
