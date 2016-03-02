@@ -21,7 +21,7 @@
 				Text="{Binding SearchText}" 
 				SearchCommand="{Binding SearchByName}"></SearchBar>
 
-			<ListView Grid.Row="1" x:Name="listCharacters"
+<!--			<ListView Grid.Row="1" x:Name="listCharacters"
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions="FillAndExpand"
 				ItemsSource="{Binding CharacterList}"
@@ -34,9 +34,9 @@
 						</ViewCell>
 			    	</DataTemplate>
 			    </ListView.ItemTemplate>
-			</ListView>
+			</ListView>-->
 			
-<!--			<rock:ListView Grid.Row="1" x:Name="listCharacters"
+			<rock:ListView Grid.Row="1" x:Name="listCharacters"
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions="FillAndExpand"
 				ItemsSource="{Binding CharacterList}"
@@ -50,7 +50,7 @@
 						</ViewCell>
 			    	</DataTemplate>
 			    </ListView.ItemTemplate>
-			</rock:ListView>-->
+			</rock:ListView>
 
 			<ActivityIndicator Grid.RowSpan="2" IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"
 	                      VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" />
