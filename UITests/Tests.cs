@@ -47,6 +47,28 @@ namespace MarvelRockSample.UITests
 
 			Assert.IsTrue (true);
 		}
+
+		[Test]
+		public void PorlaTarde ()
+		{
+			app.Tap(x => x.Marked("A-Bomb (HAS)"));
+			app.Screenshot("Tapped on view UILabel with Text: 'A-Bomb (HAS)'");
+			app.Tap(x => x.Text("Marvel Rocks"));
+			app.Screenshot("Tapped on view UILabel with Text: 'Marvel Rocks'");
+			app.Tap(x => x.Class("UISearchBarTextField"));
+			app.Screenshot("Tapped on view UISearchBarTextField");
+			app.EnterText(x => x.Class("UISearchBarTextField"), "Thor");
+			app.Screenshot("Entered 'Thor' into view UISearchBarTextField");
+
+			app.PressEnter ();
+
+			app.Tap(x => x.Class("Xamarin_Forms_Platform_iOS_LabelRenderer"));
+			app.Screenshot("Tapped on view Xamarin_Forms_Platform_iOS_LabelRenderer");
+			app.Tap(x => x.Text("Marvel Rocks"));
+			app.Screenshot("Tapped on view UILabel with Text: 'Marvel Rocks'");
+
+			Assert.IsTrue (true);
+		}
 	}
 }
 

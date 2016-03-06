@@ -10,8 +10,8 @@
 					<ColumnDefinition Width="*"/>
 					<ColumnDefinition Width="5"/>
 				</Grid.ColumnDefinitions>
-<!--				<local:ImageCircle Source="{Binding Thumbnail}" Grid.Column="0" Aspect="AspectFit" WidthRequest="60" HeightRequest="60"></local:ImageCircle>-->
-				<Image Source="{Binding Thumbnail}" Grid.Column="0" WidthRequest="60" HeightRequest="60"></Image>
+				<local:ImageCircle Source="{Binding Thumbnail}" Grid.Column="0" Aspect="AspectFit" WidthRequest="60" HeightRequest="60"></local:ImageCircle>
+<!--				<Image Source="{Binding Thumbnail}" Grid.Column="0" WidthRequest="60" HeightRequest="60"></Image>-->
 				<StackLayout Grid.Column="1" Spacing="0" Padding="0,5" Orientation="Vertical">
 					<Label Text="{Binding Name}" 
 						HorizontalOptions="FillAndExpand" 

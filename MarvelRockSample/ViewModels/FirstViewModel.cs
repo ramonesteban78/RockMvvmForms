@@ -139,5 +139,6 @@ namespace MarvelRockSample
 		{
 			await LoadData ();
 		}
+			
     }
 }

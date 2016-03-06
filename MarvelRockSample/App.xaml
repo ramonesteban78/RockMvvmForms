@@ -6,16 +6,16 @@
 		<ResourceDictionary>
 
 			<!---Glossy Styles-->
-			<Color x:Key="CardBackgroundColor">#00FFFFFF</Color>
+<!--			<Color x:Key="CardBackgroundColor">#00FFFFFF</Color>
 			<Color x:Key="SearchBarBackgroundColor">#FFFFFF</Color>
-			<Color x:Key="NameColor">#D32F2F</Color>
+			<Color x:Key="NameColor">#D32F2F</Color>-->
 
 
 			<!-- Formal Style -->
 
-<!--			<Color x:Key="CardBackgroundColor">#eceff1</Color>
+			<Color x:Key="CardBackgroundColor">#eceff1</Color>
 			<Color x:Key="SearchBarBackgroundColor">#cfd8dc</Color>
-			<Color x:Key="NameColor">#546e7a</Color>-->
+			<Color x:Key="NameColor">#546e7a</Color>
 
 			<Color x:Key="EntryBackgroundColor">#7778909c</Color>
 
