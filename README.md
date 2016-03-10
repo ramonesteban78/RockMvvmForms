@@ -1,5 +1,5 @@
 # RockMvvmForms
-RockMvvmForms, a superlight framework for Xamarin.Forms projects.
+RockMvvmForms, a very simple framework for Xamarin.Forms projects.
 
 Principles:
 
