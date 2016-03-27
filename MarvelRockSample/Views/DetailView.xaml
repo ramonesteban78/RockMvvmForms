@@ -18,7 +18,6 @@ Title="{Binding Character.Name}">
 				Aspect="Fill">
 			</control.ImageCircle>-->
 
-
 			<Image Source="{Binding Character.Thumbnail}" 
 				Grid.Row="0" 
 				HorizontalOptions="FillAndExpand" 

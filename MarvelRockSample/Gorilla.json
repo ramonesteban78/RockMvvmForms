@@ -4,9 +4,10 @@
         "name": "RockMvvmForms",
         "types": null
       },
-		{
+	{
         "name": "MarvelRockSample",
         "types": null
-      }
+      },
+
     ]
 }

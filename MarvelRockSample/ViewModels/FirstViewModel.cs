@@ -13,7 +13,12 @@ namespace MarvelRockSample
 		private bool _IsFirstLoad = true;
 		public FirstViewModel ()
 		{
-			_marvelService = DependencyService.Get<IMarvelApiService>();
+			_marvelService = RockServiceLocator.Current.Get<IMarvelApiService>();
+		}
+
+		public override async Task InitAsync ()
+		{
+			await LoadData ();
 		}
 
 		#region SearchText
@@ -96,18 +101,6 @@ namespace MarvelRockSample
 
 		#endregion
 
-//		#region View_Appearing
-//
-//		public override async void View_Appearing (object sender, System.EventArgs e)
-//		{
-//			if (_IsFirstLoad) {
-//				await LoadData ();
-//				_IsFirstLoad = false;
-//			}
-//		}
-//
-//		#endregion
-
 		#region LoadData
 
 		public async Task LoadData (string filter = null, int limit = 0, int offset = 0)
@@ -135,10 +128,7 @@ namespace MarvelRockSample
 
 
 
-		public override async Task InitAsync ()
-		{
-			await LoadData ();
-		}
+
 			
     }
 }
