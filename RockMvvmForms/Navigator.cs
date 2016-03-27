@@ -11,7 +11,7 @@ namespace RockMvvmForms
 		public Navigator (INavigation navigation)
 		{
 			_navigation = navigation;
-			_viewFactory = DependencyService.Get<IViewFactory> ();
+			_viewFactory = RockServiceLocator.Current.Get<IViewFactory> ();
 		}
 
 		public INavigation Navigation { get { return _navigation; } }

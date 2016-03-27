@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{56A7743A-7FD3-4E83-AD65-A489C835EACE}</ProjectGuid>
+    <ProjectGuid>{BF1BEA95-437C-4255-899F-57E7CBE2A434}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>MarvelRockSample.UITests</RootNamespace>
-    <AssemblyName>MarvelRockSample.UITests</AssemblyName>
+    <RootNamespace>MarvelRockSample.Test</RootNamespace>
+    <AssemblyName>MarvelRockSample.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -27,40 +27,35 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Design|AnyCPU' ">
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Design</OutputPath>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.UITest">
-      <HintPath>..\packages\Xamarin.UITest.1.3.5\lib\Xamarin.UITest.dll</HintPath>
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tests.cs" />
-    <Compile Include="AppInitializer.cs" />
+    <Compile Include="Mocks\Data.cs" />
+    <Compile Include="Mocks\MockMarvelApiService.cs" />
+    <Compile Include="Services\MarvelApiServiceTest.cs" />
+    <Compile Include="ViewModels\FirstViewModelTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\iOS\MarvelRockSample.iOS.csproj">
-      <Project>{E2A24F98-B8AE-4518-A993-12F2E174D273}</Project>
-      <Name>MarvelRockSample.iOS</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Droid\MarvelRockSample.Droid.csproj">
-      <Project>{9E0B1B54-1033-4ED2-B1F9-1EC90FBB3E9F}</Project>
-      <Name>MarvelRockSample.Droid</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Folder Include="Mocks\" />
+    <Folder Include="Services\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RockMvvmForms\RockMvvmForms.csproj">
+      <Project>{7A1FB14F-425A-48AE-9480-FCC7F906AA10}</Project>
+      <Name>RockMvvmForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarvelRockSample\MarvelRockSample.csproj">
+      <Project>{79F1CDFB-C104-4F4C-8889-B447808B6289}</Project>
+      <Name>MarvelRockSample</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

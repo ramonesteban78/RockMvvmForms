@@ -7,8 +7,6 @@ namespace MarvelRockSample
 {
 	public partial class App : Application
 	{
-		private IViewFactory _viewFactory;
-
 		public App ()
 		{
 			InitializeComponent (); 
@@ -21,6 +19,17 @@ namespace MarvelRockSample
 
 			// The root page of your application
 			MainPage = new RockNavigationPageService<FirstViewModel>().Create();
+		}
+
+		private void RegisterServices()
+		{
+			RockServiceLocator.Current.Register<IMarvelApiService, MarvelApiService> ();
+		}
+
+		private void RegisterViews()
+		{
+			ViewFactory.Register<FirstViewModel, FirstView> ();
+			ViewFactory.Register<DetailViewModel, DetailView> ();
 		}
 
 		protected override void OnStart ()
@@ -37,20 +46,7 @@ namespace MarvelRockSample
 		{
 			// Handle when your app resumes
 		}
-
-		private void RegisterServices()
-		{
-			DependencyService.Register<IViewFactory, ViewFactory> ();
-			DependencyService.Register<IMarvelApiService, MarvelApiService> ();
-		}
-
-		private void RegisterViews()
-		{
-			_viewFactory = DependencyService.Get<IViewFactory> ();
-
-			_viewFactory.Register<FirstViewModel, FirstView> ();
-			_viewFactory.Register<DetailViewModel, DetailView> ();
-		}
+			
 	}
 }
 

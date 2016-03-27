@@ -10,7 +10,7 @@ namespace MarvelRockSample
 		public FirstView ()
 		{
 			InitializeComponent ();
-
+//
 //			listCharacters.ItemTapped += (object sender, ItemTappedEventArgs e) => {
 //				var vm = this.BindingContext as FirstViewModel;
 //				vm.CharacterSelection.Execute(e.Item);

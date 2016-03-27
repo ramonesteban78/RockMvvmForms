@@ -69,6 +69,51 @@ namespace MarvelRockSample.UITests
 
 			Assert.IsTrue (true);
 		}
+
+		[Test]
+		public void TestRock ()
+		{
+			app.Tap(x => x.Class("Xamarin_Forms_Platform_iOS_LabelRenderer").Index(1));
+			app.Screenshot("Tapped on view Xamarin_Forms_Platform_iOS_LabelRenderer");
+			app.Tap(x => x.Text("Marvel Rocks"));
+			app.Screenshot("Tapped on view UILabel with Text: 'Marvel Rocks'");
+			app.Tap(x => x.Class("UISearchBarTextField"));
+			app.Screenshot("Tapped on view UISearchBarTextField");
+			app.EnterText(x => x.Class("UISearchBarTextField"), "Thor");
+
+			app.PressEnter ();
+
+			app.Screenshot("Entered 'Thor' into view UISearchBarTextField");
+			app.Tap(x => x.Class("Xamarin_Forms_Platform_iOS_LabelRenderer"));
+			app.Screenshot("Tapped on view Xamarin_Forms_Platform_iOS_LabelRenderer");
+			app.Tap(x => x.Text("Marvel Rocks"));
+			app.Screenshot("Tapped on view UILabel with Text: 'Marvel Rocks'");
+
+			Assert.IsTrue (true);
+
+		}
+
+		[Test]
+		public void NewTest ()
+		{
+			app.Tap(x => x.Marked("A-Bomb (HAS)"));
+			app.Screenshot("Tapped on view UILabel with Text: 'A-Bomb (HAS)'");
+			app.Tap(x => x.Text("Marvel Rocks"));
+			app.Screenshot("Tapped on view UILabel with Text: 'Marvel Rocks'");
+			app.Tap(x => x.Class("UISearchBarTextField"));
+			app.Screenshot("Tapped on view UISearchBarTextField");
+			app.EnterText(x => x.Class("UISearchBarTextField"), "Thor");
+			app.Screenshot("Entered 'Thor' into view UISearchBarTextField");
+
+			app.PressEnter ();
+
+			app.Tap(x => x.Class("Xamarin_Forms_Platform_iOS_Platform_DefaultRenderer").Index(1));
+			app.Screenshot("Tapped on view Xamarin_Forms_Platform_iOS_Platform_DefaultRenderer");
+			app.Tap(x => x.Text("Marvel Rocks"));
+			app.Screenshot("Tapped on view UILabel with Text: 'Marvel Rocks'");
+
+			Assert.IsTrue (true);
+		}
 	}
 }
 

@@ -56,7 +56,6 @@ namespace MarvelRockSample
 
 		#endregion
 
-
 	}
 }
 
