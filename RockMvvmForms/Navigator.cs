@@ -6,12 +6,10 @@ namespace RockMvvmForms
 {
 	public class Navigator : INavigator
 	{
-		private readonly IViewFactory _viewFactory;
 		private readonly INavigation _navigation;
 		public Navigator (INavigation navigation)
 		{
 			_navigation = navigation;
-			_viewFactory = RockServiceLocator.Current.Get<IViewFactory> ();
 		}
 
 		public INavigation Navigation { get { return _navigation; } }
@@ -39,7 +37,7 @@ namespace RockMvvmForms
 
 		public async Task<TViewModel> PushAsync<TViewModel> (TViewModel viewModel) where TViewModel : class, IViewModel
 		{
-			var view = _viewFactory.Resolve(viewModel);
+			var view = ViewFactory.Resolve<TViewModel>(viewModel);
 			await Navigation.PushAsync(view);
 			return viewModel;
 		}
@@ -54,7 +52,7 @@ namespace RockMvvmForms
 
 		public async Task<TViewModel> PushModalAsync<TViewModel> (TViewModel viewModel) where TViewModel : class, IViewModel
 		{
-			var view = _viewFactory.Resolve(viewModel);
+			var view = ViewFactory.Resolve<TViewModel>(viewModel);
 			await Navigation.PushModalAsync(view);
 			return viewModel;
 		}
