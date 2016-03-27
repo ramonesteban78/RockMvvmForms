@@ -3,8 +3,8 @@ RockMvvmForms, a very simple framework for Xamarin.Forms projects.
 
 Principles:
 
-- Use DependencyService as our service locator for the whole solution. Not IoC implemented.
-- Separate completaly the Views from the ViewModels.
+- Not IoC implemented. Just a basic Service Locator is included RockServiceLocator.
+- Separate completaly the Views from the ViewModels with the static class ViewFactory.
 - Navigation happens in the ViewModel.
 
 # Initial setup
@@ -34,16 +34,13 @@ public partial class App : Application
  
          private void RegisterServices()
          {
-             DependencyService.Register<IViewFactory, ViewFactory> ();
-             DependencyService.Register<IMarvelApiService, MarvelApiService> ();
+             RockServiceLocator.Current.Register<IMarvelApiService, MarvelApiService> ();
          }
  
          private void RegisterViews()
          {
-             _viewFactory = DependencyService.Get<IViewFactory> ();
- 
-             _viewFactory.Register<FirstViewModel, FirstView> ();
-             _viewFactory.Register<DetailViewModel, DetailView> ();
+            ViewFactory.Register<FirstViewModel, FirstView> ();
+            ViewFactory.Register<DetailViewModel, DetailView> ();
          }
  
          protected override void OnStart ()
@@ -67,21 +64,32 @@ public partial class App : Application
 
 The ViewFactory is the repository for ViewModels and Views. 
 
-The ViewFactory is registered in the DependencyService ViewModels as follows:
+The ViewFactory is a static class and this is how to register your ViewModels and Views:
 
 ```c#
-private void RegisterServices()
-{
-     DependencyService.Register<IViewFactory, ViewFactory> ();
-     DependencyService.Register<IMarvelApiService, MarvelApiService> ();
-}
- 
 private void RegisterViews()
 {
-    _viewFactory = DependencyService.Get<IViewFactory> ();
- 
-    _viewFactory.Register<FirstViewModel, FirstView> ();
-    _viewFactory.Register<DetailViewModel, DetailView> ();
+    ViewFactory.Register<FirstViewModel, FirstView> ();
+    ViewFactory.Register<DetailViewModel, DetailView> ();
+}
+```
+
+# RockServiceLocator
+
+This is a basic Service Locator. The reason of creating my own Service Locator and not to use DependencyService is because to use DependencyService you need to execute Forms.Init() and this is a bad choice if you want to have your Unit Tests in a nUnit Library Project. This is how to use it:
+
+```c#
+// Register
+private void RegisterServices()
+{
+    RockServiceLocator.Current.Register<IMarvelApiService, MarvelApiService> ();
+}
+
+// Resolve
+private readonly IMarvelApiService _marvelService;
+public FirstViewModel ()
+{
+     _marvelService = RockServiceLocator.Current.Get<IMarvelApiService>();
 }
 ```
 
