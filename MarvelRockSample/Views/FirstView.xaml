@@ -20,28 +20,12 @@
 			<SearchBar Grid.Row="0" 
 				Text="{Binding SearchText}" 
 				SearchCommand="{Binding SearchByName}"></SearchBar>
-
-<!--			<ListView Grid.Row="1" x:Name="listCharacters"
-				HorizontalOptions="FillAndExpand"
-				VerticalOptions="FillAndExpand"
-				ItemsSource="{Binding CharacterList}"
-				CachingStrategy="RecycleElement" 
-				RowHeight="80" >
-			    <ListView.ItemTemplate>
-			    	<DataTemplate>
-			    		<ViewCell>
-							<local:CharacterTemplate />
-						</ViewCell>
-			    	</DataTemplate>
-			    </ListView.ItemTemplate>
-			</ListView>-->
 			
 			<rock:ListView Grid.Row="1" x:Name="listCharacters"
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions="FillAndExpand"
 				ItemsSource="{Binding CharacterList}"
 				ItemSelectedCommand="{Binding CharacterSelection}"
-				CachingStrategy="RecycleElement" 
 				RowHeight="80" >
 			    <ListView.ItemTemplate>
 			    	<DataTemplate>
